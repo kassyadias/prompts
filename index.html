@@ -204,6 +204,25 @@
       position: relative;
       z-index: 1;
       width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-text { display: flex; flex-direction: column; }
+
+    .hero-img-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-img-wrap img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 12px;
+      filter: drop-shadow(0 24px 60px rgba(0,0,0,.5));
     }
 
     .hero-eyebrow {
@@ -228,7 +247,7 @@
     }
 
     .hero-title {
-      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-size: clamp(1.8rem, 3.4vw, 3.75rem);
       max-width: 22ch;
       color: var(--white);
       margin-bottom: 36px;
@@ -1080,6 +1099,9 @@
        RESPONSIVE
     ══════════════════════════════════════ */
     @media (max-width: 960px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-img-wrap { order: -1; }
+      .hero-img-wrap img { max-width: 420px; }
       .stats-row { grid-template-columns: repeat(2, 1fr); }
       .stat:nth-child(2) { border-right: none; }
       .stat:nth-child(3) {
@@ -1122,7 +1144,10 @@
       section { padding: 52px 0; }
       .container { padding: 0 18px; }
       #hero { padding-top: 80px; padding-bottom: 48px; }
-      .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-img-wrap { order: -1; }
+      .hero-img-wrap img { max-width: 320px; }
+      .hero-title { font-size: clamp(1.5rem, 6.8vw, 2.25rem); }
       .hero-desc { font-size: .95rem; }
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; font-size: .82rem; padding: 14px 20px; }
@@ -1212,17 +1237,22 @@
 <section id="hero">
   <div class="container">
     <div class="hero-inner fade">
-      <h1 class="hero-title display">
-        <strong>+150 prompts prontos</strong> para <em>arquitetos e engenheiros</em> usarem com IA agora.
-      </h1>
-      <p class="hero-desc">
-        Economize horas toda semana com prompts organizados por área: projetos, renderização, contratos, financeiro, marketing e muito mais. Funciona com ChatGPT, Claude, Gemini e outras IAs.
-      </p>
-      <div class="hero-actions">
-        <a href="#preco" class="btn btn-primary">QUERO OS PROMPTS POR R$&nbsp;27 →</a>
-        <a href="#conteudo" class="btn btn-ghost">Ver o que está incluso ↓</a>
+      <div class="hero-text">
+        <h1 class="hero-title display">
+          <strong>+150 prompts prontos</strong> para <em>arquitetos e engenheiros</em> usarem com IA agora.
+        </h1>
+        <p class="hero-desc">
+          Economize horas toda semana com prompts organizados por área: projetos, renderização, contratos, financeiro, marketing e muito mais. Funciona com ChatGPT, Claude, Gemini e outras IAs.
+        </p>
+        <div class="hero-actions">
+          <a href="#preco" class="btn btn-primary">QUERO OS PROMPTS POR R$&nbsp;27 →</a>
+          <a href="#conteudo" class="btn btn-ghost">Ver o que está incluso ↓</a>
+        </div>
+        <p class="hero-footnote">Pagamento único · Acesso vitalício · Garantia de 7 dias</p>
       </div>
-      <p class="hero-footnote">Pagamento único · Acesso vitalício · Garantia de 7 dias</p>
+      <div class="hero-img-wrap">
+        <img src="mockup.png" alt="+150 Prompts para Arquitetos e Engenheiros" />
+      </div>
     </div>
   </div>
 </section>
