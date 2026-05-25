@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>+150 Prompts para Arquitetos e Engenheiros — R$ 27</title>
+  <meta name="description" content="Mais de 150 prompts prontos para arquitetos e engenheiros usarem com IA no dia a dia. Economize horas toda semana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #121212;
+      --bg2:     #1A1714;
+      --bg3:     #181512;
+      --blue:    #D4602A;
+      --blue-lo: rgba(212,96,42,.12);
+      --white:   #FAF7F2;
+      --muted:   rgba(250,247,242,.68);
+      --dim:     rgba(250,247,242,.35);
+      --border:  rgba(250,247,242,.07);
+      --red:     #F03E3E;
+      --green:   #22C55E;
+      --cream:   #F5EDE0;
+      --dark-txt:#121212;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .display {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
+    }
+
+    .label {
+      font-size: .7rem;
+      font-weight: 600;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--blue);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 28px;
+    }
+
+    section { padding: 72px 0; }
+
+    /* ── Fade-in ── */
+    .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .fade.in { opacity: 1; transform: none; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: .85rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      padding: 14px 26px;
+      border-radius: 3px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .18s, box-shadow .18s, background .18s, color .18s;
+    }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-primary:hover { transform: scale(1.03); box-shadow: 0 6px 28px rgba(30,94,255,.38); }
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255,255,255,.9);
+      border: 1px solid rgba(255,255,255,.32);
+    }
+    .btn-ghost:hover { border-color: rgba(255,255,255,.65); color: var(--white); }
+    .btn-lg { font-size: .92rem; padding: 17px 38px; }
+
+
+    /* ══════════════════════════════════════
+       HEADER
+    ══════════════════════════════════════ */
+    #hdr {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 100;
+      background: rgba(10,10,10,.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hdr-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: .85rem;
+      color: var(--white);
+      letter-spacing: .02em;
+      text-decoration: none;
+    }
+
+    .logo-sq {
+      width: 26px;
+      height: 26px;
+      background: var(--blue);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 800;
+      font-size: .82rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .hdr-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .hdr-nav a {
+      color: var(--muted);
+      font-size: .82rem;
+      text-decoration: none;
+      transition: color .18s;
+      letter-spacing: .02em;
+    }
+    .hdr-nav a:hover { color: var(--white); }
+
+    .hdr-cta { font-size: .78rem; padding: 9px 20px; }
+
+
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
+    #hero {
+      display: flex;
+      align-items: flex-start;
+      padding-top: 100px;
+      padding-bottom: 80px;
+      position: relative;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    /* subtle architectural grid */
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.022) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+    }
+
+    /* blue glow top-right */
+    #hero::after {
+      content: '';
+      position: absolute;
+      top: 0; right: 0;
+      width: 55%;
+      height: 100%;
+      background: radial-gradient(ellipse at 85% 15%, rgba(30,94,255,.14) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 32px;
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--blue);
+      border-radius: 50%;
+    }
+
+    .hero-eyebrow-text {
+      font-size: .7rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      max-width: 22ch;
+      color: var(--white);
+      margin-bottom: 36px;
+    }
+
+    .hero-title strong {
+      font-weight: 900;
+      color: var(--white);
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--blue);
+    }
+
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 40px;
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .hero-footnote {
+      margin-top: 20px;
+      font-size: .78rem;
+      color: var(--dim);
+      letter-spacing: .02em;
+    }
+
+
+    /* ══════════════════════════════════════
+       STATS BAR
+    ══════════════════════════════════════ */
+    #stats {
+      padding: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 36px 28px;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+
+    .stat-n {
+      font-size: clamp(2rem, 3.8vw, 3rem);
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-l {
+      font-size: .75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+
+    /* ══════════════════════════════════════
+       SHARED SECTION HEAD
+    ══════════════════════════════════════ */
+    .sec-head { margin-bottom: 36px; }
+    .sec-head .label { display: block; margin-bottom: 18px; }
+    .sec-head h2 {
+      font-size: clamp(2rem, 3.85vw, 3.4rem);
+      max-width: 18ch;
+    }
+    .sec-head p {
+      margin-top: 16px;
+      font-size: .98rem;
+      color: var(--muted);
+      max-width: 520px;
+      line-height: 1.7;
+    }
+
+
+    /* ══════════════════════════════════════
+       PROBLEMA
+    ══════════════════════════════════════ */
+    #problema { background: var(--bg); }
+
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--border);
+    }
+
+    .pain-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 26px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pain-item:nth-child(odd)  { padding-right: 52px; }
+    .pain-item:nth-child(even) { padding-left: 52px; border-left: 1px solid var(--border); }
+
+    .pain-x {
+      flex-shrink: 0;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--red);
+      margin-top: 2px;
+      line-height: 1.6;
+    }
+
+    .pain-txt {
+      font-size: .95rem;
+      color: rgba(255,255,255,.72);
+      line-height: 1.55;
+    }
+
+
+    /* ══════════════════════════════════════
+       CONTEÚDO
+    ══════════════════════════════════════ */
+    #conteudo { background: var(--bg2); }
+
+    .cat-table {
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cat-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .cat-row:nth-child(odd)  { padding-right: 52px; }
+    .cat-row:nth-child(even) { padding-left: 52px; border-left: 1px solid var(--border); }
+
+    .cat-left { display: flex; align-items: center; gap: 16px; }
+
+    .cat-n {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--blue);
+      min-width: 26px;
+    }
+
+    .cat-name {
+      font-size: .95rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .cat-desc {
+      font-size: .76rem;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    .cat-count {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--dim);
+      flex-shrink: 0;
+    }
+
+    .compat-bar {
+      margin-top: 40px;
+      padding: 22px 28px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .compat-bar-l .label { margin-bottom: 6px; }
+
+    .compat-tools {
+      font-size: .95rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.8);
+    }
+
+
+    /* ══════════════════════════════════════
+       COMO FUNCIONA
+    ══════════════════════════════════════ */
+    #como { background: var(--bg); }
+
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+    }
+
+    .step {
+      padding: 40px 36px 40px 0;
+      border-right: 1px solid var(--border);
+    }
+    .step:nth-child(2) { padding: 40px 36px; }
+    .step:last-child   { padding: 40px 0 40px 36px; border-right: none; }
+
+    .step-n {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    .step-title {
+      font-weight: 600;
+      font-size: .98rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .step-desc {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+
+    /* ══════════════════════════════════════
+       PARA QUEM
+    ══════════════════════════════════════ */
+    #paraquem { background: var(--bg2); }
+
+    .who-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--border);
+      margin-top: 36px;
+    }
+
+    .who-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .who-item:nth-child(odd)  { padding-right: 52px; }
+    .who-item:nth-child(even) { padding-left: 52px; border-left: 1px solid var(--border); }
+
+    .who-check {
+      flex-shrink: 0;
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-top: 2px;
+      line-height: 1.6;
+    }
+
+    .who-txt {
+      font-size: .95rem;
+      color: rgba(255,255,255,.72);
+      line-height: 1.55;
+    }
+
+
+    /* ══════════════════════════════════════
+       MOCKUP
+    ══════════════════════════════════════ */
+    #mockup { background: var(--bg); }
+
+    .browser {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 36px;
+      max-width: 860px;
+    }
+
+    .br-bar {
+      background: var(--bg3);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .br-d { width: 11px; height: 11px; border-radius: 50%; }
+    .br-d-r { background: #FF5F57; }
+    .br-d-y { background: #FEBC2E; }
+    .br-d-g { background: #28C840; }
+
+    .br-url {
+      margin-left: 8px;
+      background: rgba(255,255,255,.05);
+      border-radius: 3px;
+      flex: 1;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: .7rem;
+      color: var(--muted);
+      font-family: 'Inter', monospace;
+    }
+
+    /* ── Light UI inside browser ── */
+    .br-body {
+      background: #F0F0F0;
+      padding: 20px;
+    }
+
+    .ui-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .ui-stat-chip {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 14px;
+      border: 1.5px solid #D0D0D0;
+      border-radius: 99px;
+      background: #fff;
+      font-size: .75rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .ui-stat-chip strong {
+      color: #1E5EFF;
+      font-weight: 700;
+    }
+
+    .ui-cat-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border: 1.5px solid #D0D0D0;
+      border-radius: 99px;
+      background: #fff;
+      font-size: .75rem;
+      color: #555;
+      margin-bottom: 16px;
+    }
+
+    .ui-filter-label {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 8px;
+    }
+
+    .ui-filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .ui-pill {
+      padding: 5px 13px;
+      border-radius: 99px;
+      border: 1.5px solid #D5D5D5;
+      background: #fff;
+      font-size: .72rem;
+      color: #444;
+      font-weight: 500;
+      cursor: default;
+      white-space: nowrap;
+    }
+
+    .ui-pill.active {
+      background: #0A2463;
+      border-color: #0A2463;
+      color: #fff;
+    }
+
+    .ui-ia-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .ui-ia-label {
+      font-size: .72rem;
+      font-weight: 700;
+      color: #666;
+      margin-right: 2px;
+    }
+
+    .ui-ia {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 11px;
+      border-radius: 99px;
+      border: 1.5px solid;
+      font-size: .7rem;
+      font-weight: 600;
+      cursor: default;
+      white-space: nowrap;
+    }
+
+    .ui-ia-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+    .ia-gpt   { border-color: #19A37A; color: #19A37A; }
+    .ia-gem   { border-color: #4285F4; color: #4285F4; }
+    .ia-cla   { border-color: #D97706; color: #D97706; }
+    .ia-grok  { border-color: #111;    color: #111; }
+    .ia-mj    { border-color: #444;    color: #444; }
+    .ia-dalle { border-color: #19A37A; color: #19A37A; }
+    .ia-ideo  { border-color: #7C3AED; color: #7C3AED; }
+    .ia-fire  { border-color: #E8336D; color: #E8336D; }
+
+    .ui-prompts { display: flex; flex-direction: column; gap: 8px; }
+
+    .ui-prompt-card {
+      background: #fff;
+      border: 1px solid #E5E5E5;
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .ui-p-left { flex: 1; }
+
+    .ui-p-num {
+      font-size: .7rem;
+      color: #999;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+
+    .ui-p-title {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #111;
+      margin-bottom: 7px;
+    }
+
+    .ui-p-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .ui-tag {
+      padding: 2px 9px;
+      border-radius: 99px;
+      border: 1.5px solid;
+      font-size: .65rem;
+      font-weight: 600;
+    }
+
+    .tag-cat  { border-color: #D0D0D0; color: #555; background: #F5F5F5; }
+    .tag-gpt  { border-color: #19A37A; color: #19A37A; }
+    .tag-gem  { border-color: #4285F4; color: #4285F4; }
+    .tag-cla  { border-color: #D97706; color: #D97706; }
+    .tag-grok { border-color: #333;    color: #333; }
+
+    .ui-p-chevron {
+      font-size: .8rem;
+      color: #aaa;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+
+    .mockup-note {
+      margin-top: 20px;
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+
+    /* ══════════════════════════════════════
+       GARANTIA
+    ══════════════════════════════════════ */
+    #garantia { background: var(--bg2); }
+
+    .g-box {
+      border: 1px solid var(--border);
+      padding: 52px;
+      max-width: 660px;
+      position: relative;
+    }
+
+    .g-file-tag {
+      position: absolute;
+      top: -1px;
+      left: 24px;
+      background: var(--bg2);
+      padding: 0 8px;
+      font-size: .65rem;
+      color: var(--muted);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-family: 'Inter', monospace;
+    }
+
+    .g-box h3 {
+      font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+
+    .g-box p {
+      font-size: .98rem;
+      color: var(--muted);
+      line-height: 1.72;
+    }
+
+    .g-comment {
+      margin-top: 22px;
+      font-size: .78rem;
+      color: var(--dim);
+      font-family: 'Inter', monospace;
+    }
+
+
+    /* ══════════════════════════════════════
+       PREÇO
+    ══════════════════════════════════════ */
+    #preco {
+      background: #FFFFFF;
+      border-top: 1px solid #E8E8E8;
+      border-bottom: 1px solid #E8E8E8;
+      text-align: center;
+    }
+
+    .p-inner {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    .p-badge {
+      display: inline-block;
+      background: var(--blue);
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 3px;
+      margin-bottom: 28px;
+    }
+
+    .p-from-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .p-old {
+      font-size: 1.1rem;
+      color: #AAA;
+      text-decoration: line-through;
+    }
+
+    .p-savings {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--green);
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
+
+    .p-main {
+      font-size: clamp(5rem, 14vw, 9rem);
+      color: #0A0A0A;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .p-note {
+      font-size: .88rem;
+      color: #888;
+      margin-bottom: 36px;
+    }
+
+    .p-cta {
+      display: block;
+      width: 100%;
+      font-size: 1rem;
+      padding: 20px 32px;
+      border-radius: 4px;
+      letter-spacing: .06em;
+      text-align: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+
+    .p-guarantee-note {
+      font-size: .78rem;
+      color: #999;
+      margin-bottom: 32px;
+    }
+
+    .p-divider {
+      border: none;
+      border-top: 1px solid #EBEBEB;
+      margin: 0 0 28px;
+    }
+
+    .p-checklist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 24px;
+      margin-bottom: 32px;
+      text-align: left;
+    }
+
+    .p-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      font-size: .86rem;
+      color: #333;
+      line-height: 1.45;
+    }
+
+    .p-check-icon {
+      color: var(--green);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .p-methods {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .p-method {
+      padding: 7px 16px;
+      border: 1px solid #E0E0E0;
+      border-radius: 3px;
+      font-size: .76rem;
+      color: #666;
+      background: #FAFAFA;
+    }
+
+
+    /* ══════════════════════════════════════
+       FAQ
+    ══════════════════════════════════════ */
+    #faq { background: var(--bg2); }
+
+    .faq-list {
+      margin-top: 36px;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item { border-bottom: 1px solid var(--border); }
+
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 26px 0;
+      cursor: pointer;
+      font-size: .98rem;
+      font-weight: 600;
+      color: var(--white);
+      user-select: none;
+      transition: color .18s;
+    }
+    .faq-q:hover { color: rgba(255,255,255,.75); }
+
+    .faq-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blue);
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1;
+      transition: transform .28s;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .34s cubic-bezier(.4,0,.2,1);
+    }
+
+    .faq-a-body {
+      padding: 0 0 26px;
+      font-size: .93rem;
+      color: var(--muted);
+      line-height: 1.72;
+      max-width: 700px;
+    }
+
+
+    /* ══════════════════════════════════════
+       CTA FINAL
+    ══════════════════════════════════════ */
+    #cta-final {
+      background: var(--blue);
+      padding: 72px 0;
+      text-align: center;
+    }
+
+    #cta-final h2 {
+      font-size: clamp(1.8rem, 4.2vw, 3.5rem);
+      color: var(--white);
+      margin-bottom: 40px;
+      max-width: 22ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-inv {
+      background: var(--white);
+      color: var(--blue);
+      font-size: .95rem;
+      padding: 18px 46px;
+      border-radius: 3px;
+      font-weight: 700;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      display: inline-flex;
+      gap: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform .18s, box-shadow .18s;
+    }
+    .btn-inv:hover {
+      transform: scale(1.04);
+      box-shadow: 0 12px 40px rgba(0,0,0,.22);
+    }
+
+
+    /* ══════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════ */
+    #footer {
+      background: #060606;
+      padding: 34px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: .78rem;
+      color: var(--dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-links a {
+      font-size: .78rem;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color .18s;
+    }
+    .footer-links a:hover { color: var(--muted); }
+
+
+    /* ══════════════════════════════════════
+       CREAM SECTIONS — texto escuro
+    ══════════════════════════════════════ */
+    #conteudo, #paraquem, #garantia, #faq {
+      background: var(--cream);
+      color: var(--dark-txt);
+    }
+
+    #conteudo .sec-head h2,
+    #paraquem .sec-head h2,
+    #faq .sec-head h2 { color: var(--dark-txt); }
+
+    #conteudo .sec-head p,
+    #paraquem .sec-head p,
+    #faq .sec-head p { color: rgba(18,18,18,.6); }
+
+    #conteudo .cat-name  { color: var(--dark-txt); }
+    #conteudo .cat-n     { color: var(--blue); }
+    #conteudo .cat-desc  { color: rgba(18,18,18,.58); }
+    #conteudo .cat-count { color: rgba(18,18,18,.18); }
+    #conteudo .cat-table,
+    #conteudo .cat-row   { border-color: rgba(18,18,18,.1); }
+    #conteudo .compat-bar {
+      border-color: rgba(18,18,18,.15);
+      background: var(--dark-txt);
+    }
+    #conteudo .compat-tools { color: rgba(250,247,242,.85); }
+
+    #paraquem .who-grid,
+    #paraquem .who-item  { border-color: rgba(18,18,18,.1); }
+    #paraquem .who-txt   { color: rgba(18,18,18,.75); }
+
+    #garantia .g-box     { border-color: rgba(18,18,18,.15); }
+    #garantia .g-file-tag { background: var(--cream); color: rgba(18,18,18,.45); }
+    #garantia .g-box h3  { color: var(--dark-txt); }
+    #garantia .g-box p   { color: rgba(18,18,18,.62); }
+    #garantia .g-comment { color: rgba(18,18,18,.38); }
+
+    #faq .faq-list,
+    #faq .faq-item  { border-color: rgba(18,18,18,.1); }
+    #faq .faq-q     { color: var(--dark-txt); }
+    #faq .faq-q:hover { color: rgba(18,18,18,.65); }
+    #faq .faq-a-body  { color: rgba(18,18,18,.62); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+    ══════════════════════════════════════ */
+    @media (max-width: 960px) {
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(2) { border-right: none; }
+      .stat:nth-child(3) {
+        border-right: 1px solid var(--border);
+        border-top: 1px solid var(--border);
+      }
+      .stat:nth-child(4) {
+        border-top: 1px solid var(--border);
+        border-right: none;
+      }
+
+      .pain-grid, .who-grid, .cat-table { grid-template-columns: 1fr; }
+
+      .pain-item:nth-child(odd),
+      .pain-item:nth-child(even) { padding: 22px 0; border-left: none; }
+
+      .who-item:nth-child(odd),
+      .who-item:nth-child(even) { padding: 22px 0; border-left: none; }
+
+      .cat-row:nth-child(odd),
+      .cat-row:nth-child(even) { padding: 20px 0; border-left: none; }
+
+      .steps-row { grid-template-columns: 1fr; }
+      .step,
+      .step:nth-child(2),
+      .step:last-child {
+        border-right: none;
+        border-top: 1px solid var(--border);
+        padding: 32px 0;
+      }
+      .step:first-child { border-top: none; }
+
+      .hdr-nav { display: none; }
+
+      .br-body { grid-template-columns: 1fr; }
+      .br-side { border-right: none; border-bottom: 1px solid var(--border); }
+    }
+
+    @media (max-width: 640px) {
+      section { padding: 52px 0; }
+      .container { padding: 0 18px; }
+      #hero { padding-top: 80px; padding-bottom: 48px; }
+      .hero-title { font-size: clamp(2rem, 9vw, 3rem); }
+      .hero-desc { font-size: .95rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; justify-content: center; font-size: .82rem; padding: 14px 20px; }
+      .hdr-cta { font-size: .72rem; padding: 8px 14px; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .stat { padding: 22px 16px; }
+      .stat-n { font-size: 1.8rem; }
+      .sec-head { margin-bottom: 24px; }
+      .sec-head h2 { font-size: clamp(1.6rem, 7vw, 2.4rem); }
+      .pain-grid { grid-template-columns: 1fr; }
+      .pain-item { padding: 16px 0; }
+      .cat-table { grid-template-columns: 1fr; }
+      .cat-row { padding: 16px 0; }
+      .compat-bar { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .compat-bar .btn { width: 100%; justify-content: center; }
+      .steps-row { grid-template-columns: 1fr; }
+      .step, .step:nth-child(2), .step:last-child { padding: 24px 0; }
+      .step-n { font-size: 2.8rem; }
+      .who-grid { grid-template-columns: 1fr; }
+      .who-item { padding: 16px 0; }
+      .browser { border-radius: 6px; }
+      .br-body { display: block; }
+      .br-side { display: none; }
+      .br-main { padding: 16px; }
+      .ui-filter-row { gap: 5px; }
+      .ui-pill { font-size: .65rem; padding: 4px 10px; }
+      .ui-ia-row { gap: 5px; }
+      .ui-ia { font-size: .62rem; padding: 3px 8px; }
+      .ui-p-title { font-size: .82rem; }
+      .ui-stats { gap: 6px; }
+      .ui-stat-chip { font-size: .68rem; padding: 4px 10px; }
+      .g-box { padding: 28px 20px; }
+      .p-inner { padding: 0 4px; }
+      .p-main { font-size: clamp(4rem, 18vw, 6rem); }
+      .p-checklist { grid-template-columns: 1fr; }
+      .p-cta { width: 100%; justify-content: center; font-size: .85rem; padding: 17px 20px; letter-spacing: .02em; }
+      .faq-q { font-size: .9rem; padding: 20px 0; }
+      #cta-final { padding: 52px 0; }
+      .btn-inv { width: 100%; justify-content: center; font-size: .85rem; padding: 16px 24px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+  </style>
+  <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    data-utmify-prevent-xcod-sck
+    data-utmify-prevent-subids
+    async
+    defer
+  ></script>
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '521238463424311');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=521238463424311&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel -->
+</head>
+<body>
+
+
+<!-- ══ HEADER ══ -->
+<header id="hdr">
+  <div class="container hdr-inner">
+    <a href="https://pay.kiwify.com.br/1P6rMzP" class="logo">
+      +150 Prompts
+    </a>
+    <nav class="hdr-nav">
+      <a href="#problema">O Problema</a>
+      <a href="#conteudo">Conteúdo</a>
+      <a href="#preco">Preço</a>
+    </nav>
+    <a href="#preco" class="btn btn-primary hdr-cta">Quero Agora — R$&nbsp;27</a>
+  </div>
+</header>
+
+
+<!-- ══ HERO ══ -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner fade">
+      <h1 class="hero-title display">
+        <strong>+150 prompts prontos</strong> para <em>arquitetos e engenheiros</em> usarem com IA agora.
+      </h1>
+      <p class="hero-desc">
+        Economize horas toda semana com prompts organizados por área: projetos, renderização, contratos, financeiro, marketing e muito mais. Funciona com ChatGPT, Claude, Gemini e outras IAs.
+      </p>
+      <div class="hero-actions">
+        <a href="#preco" class="btn btn-primary">QUERO OS PROMPTS POR R$&nbsp;27 →</a>
+        <a href="#conteudo" class="btn btn-ghost">Ver o que está incluso ↓</a>
+      </div>
+      <p class="hero-footnote">Pagamento único · Acesso vitalício · Garantia de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ STATS ══ -->
+<section id="stats">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat fade">
+        <p class="stat-n display">150+</p>
+        <p class="stat-l">Prompts prontos</p>
+      </div>
+      <div class="stat fade" style="transition-delay:.08s">
+        <p class="stat-n display">10</p>
+        <p class="stat-l">Categorias organizadas</p>
+      </div>
+      <div class="stat fade" style="transition-delay:.16s">
+        <p class="stat-n display">7+</p>
+        <p class="stat-l">IAs compatíveis</p>
+      </div>
+      <div class="stat fade" style="transition-delay:.24s">
+        <p class="stat-n display">R$&nbsp;27</p>
+        <p class="stat-l">Pagamento único</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PROBLEMA ══ -->
+<section id="problema">
+  <div class="container">
+    <div class="sec-head fade">
+      <span class="label">O Problema</span>
+      <h2 class="display">Eu sei que você está cansado de dar conta de tudo!</h2>
+      <p>Você precisa ser projetista, gestor, social media, financeiro e redator ao mesmo tempo. Mas a IA resolve isso — se você souber usar os prompts certos.</p>
+    </div>
+    <div class="pain-grid">
+      <div class="pain-item fade">
+        <span class="pain-x">✕</span>
+        <p class="pain-txt">Fica horas tentando escrever um <strong>memorial descritivo</strong> do zero sem saber por onde começar</p>
+      </div>
+      <div class="pain-item fade" style="transition-delay:.05s">
+        <span class="pain-x">✕</span>
+        <p class="pain-txt">Não sabe como pedir ajuda certa para a IA e os resultados saem genéricos, sem linguagem técnica</p>
+      </div>
+      <div class="pain-item fade" style="transition-delay:.1s">
+        <span class="pain-x">✕</span>
+        <p class="pain-txt">Perde tempo com tarefas repetitivas — briefings, orçamentos, contratos — que poderiam ser automáticas</p>
+      </div>
+      <div class="pain-item fade" style="transition-delay:.15s">
+        <span class="pain-x">✕</span>
+        <p class="pain-txt">Quer usar ChatGPT, Gemini ou Claude mas não sabe por onde começar no contexto técnico</p>
+      </div>
+      <div class="pain-item fade" style="transition-delay:.2s">
+        <span class="pain-x">✕</span>
+        <p class="pain-txt">Já tem acesso à IA mas não sabe usar os <strong>prompts certos</strong> para extrair resultados profissionais</p>
+      </div>
+      <div class="pain-item fade" style="transition-delay:.25s">
+        <span class="pain-x">✕</span>
+        <p class="pain-txt">Quer gerar <strong>renders e plantas humanizadas</strong> mas não domina os prompts de imagem</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CONTEÚDO ══ -->
+<section id="conteudo">
+  <div class="container">
+    <div class="sec-head fade">
+      <span class="label">O que está incluso</span>
+      <h2 class="display">+150 prompts<br>em 10 categorias.</h2>
+      <p>Cada categoria foi desenvolvida para um momento real do seu dia a dia de escritório — do briefing ao pós-obra.</p>
+    </div>
+    <div class="cat-table">
+
+      <div class="cat-row fade">
+        <div class="cat-left">
+          <span class="cat-n">01</span>
+          <div>
+            <div class="cat-name">Projetos</div>
+            <div class="cat-desc">Memorial descritivo, briefing, ART/RRT, compatibilização</div>
+          </div>
+        </div>
+        <span class="cat-count">24</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.04s">
+        <div class="cat-left">
+          <span class="cat-n">02</span>
+          <div>
+            <div class="cat-name">Marketing</div>
+            <div class="cat-desc">Posts, captions, cases, LinkedIn e Instagram</div>
+          </div>
+        </div>
+        <span class="cat-count">14</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.08s">
+        <div class="cat-left">
+          <span class="cat-n">03</span>
+          <div>
+            <div class="cat-name">Renderização</div>
+            <div class="cat-desc">Midjourney, DALL-E, Ideogram, plantas humanizadas</div>
+          </div>
+        </div>
+        <span class="cat-count">11</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.12s">
+        <div class="cat-left">
+          <span class="cat-n">04</span>
+          <div>
+            <div class="cat-name">Contratos</div>
+            <div class="cat-desc">Honorários, cláusulas, reajuste, distrato, adendos</div>
+          </div>
+        </div>
+        <span class="cat-count">13</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.16s">
+        <div class="cat-left">
+          <span class="cat-n">05</span>
+          <div>
+            <div class="cat-name">Financeiro</div>
+            <div class="cat-desc">Planilhas de custo, BDI, fluxo de caixa, relatórios</div>
+          </div>
+        </div>
+        <span class="cat-count">13</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.2s">
+        <div class="cat-left">
+          <span class="cat-n">06</span>
+          <div>
+            <div class="cat-name">Fornecedores</div>
+            <div class="cat-desc">Cotações, e-mails técnicos, comparativo de propostas</div>
+          </div>
+        </div>
+        <span class="cat-count">10</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.24s">
+        <div class="cat-left">
+          <span class="cat-n">07</span>
+          <div>
+            <div class="cat-name">Organização</div>
+            <div class="cat-desc">Checklists, cronogramas, atas de reunião, ABNT</div>
+          </div>
+        </div>
+        <span class="cat-count">10</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.28s">
+        <div class="cat-left">
+          <span class="cat-n">08</span>
+          <div>
+            <div class="cat-name">Atendimento</div>
+            <div class="cat-desc">Roteiros de reunião, follow-up, proposta, objeções</div>
+          </div>
+        </div>
+        <span class="cat-count">10</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.32s">
+        <div class="cat-left">
+          <span class="cat-n">09</span>
+          <div>
+            <div class="cat-name">RH &amp; Equipe</div>
+            <div class="cat-desc">Vagas, feedback, onboarding de estagiários</div>
+          </div>
+        </div>
+        <span class="cat-count">12</span>
+      </div>
+
+      <div class="cat-row fade" style="transition-delay:.36s">
+        <div class="cat-left">
+          <span class="cat-n">10</span>
+          <div>
+            <div class="cat-name">Captação</div>
+            <div class="cat-desc">Prospecção, scripts de venda, e-mails frios, WhatsApp</div>
+          </div>
+        </div>
+        <span class="cat-count">13</span>
+      </div>
+
+    </div>
+
+    <div class="compat-bar fade">
+      <div class="compat-bar-l">
+        <span class="label">Compatível com</span>
+        <div class="compat-tools">ChatGPT · Claude · Gemini · Grok · Midjourney · DALL-E · Ideogram · Adobe Firefly</div>
+      </div>
+      <a href="#preco" class="btn btn-primary">Quero os prompts →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ COMO FUNCIONA ══ -->
+<section id="como">
+  <div class="container">
+    <div class="sec-head fade">
+      <span class="label">Como funciona</span>
+      <h2 class="display"></h2>
+    </div>
+    <div class="steps-row">
+      <div class="step fade">
+        <div class="step-n">01</div>
+        <div class="step-title">Escolha o prompt da área que precisa</div>
+        <p class="step-desc">Memorial descritivo, briefing, contrato, orçamento, caption — há um prompt certo para cada situação do seu escritório.</p>
+      </div>
+      <div class="step fade" style="transition-delay:.1s">
+        <div class="step-n">02</div>
+        <div class="step-title">Cole no ChatGPT, Claude ou Gemini</div>
+        <p class="step-desc">Sem configuração técnica, sem instalação. Copia o texto, cola na IA que já usa e ajusta os dados do seu projeto.</p>
+      </div>
+      <div class="step fade" style="transition-delay:.2s">
+        <div class="step-n">03</div>
+        <div class="step-title">Receba um resultado profissional em segundos</div>
+        <p class="step-desc">Textos técnicos, renders, planilhas e roteiros na linguagem e no padrão exigido pelo mercado de arquitetura e engenharia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PARA QUEM ══ -->
+<section id="paraquem">
+  <div class="container">
+    <div class="sec-head fade">
+      <span class="label">Para quem é</span>
+      <h2 class="display">Este produto é<br>para você se…</h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-item fade">
+        <span class="who-check">✓</span>
+        <p class="who-txt">É <strong>arquiteto ou engenheiro</strong> e quer usar IA no trabalho real — não só para testar</p>
+      </div>
+      <div class="who-item fade" style="transition-delay:.05s">
+        <span class="who-check">✓</span>
+        <p class="who-txt">Quer parar de perder tempo com <strong>memoriais, briefings, contratos e orçamentos</strong> repetitivos</p>
+      </div>
+      <div class="who-item fade" style="transition-delay:.1s">
+        <span class="who-check">✓</span>
+        <p class="who-txt">Já tem acesso ao ChatGPT mas <strong>não sabe extrair resultados técnicos</strong> de verdade</p>
+      </div>
+      <div class="who-item fade" style="transition-delay:.15s">
+        <span class="who-check">✓</span>
+        <p class="who-txt">Quer gerar <strong>renders e plantas humanizadas</strong> com IA sem depender de terceiros</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ MOCKUP ══ -->
+<section id="mockup">
+  <div class="container">
+    <div class="sec-head fade">
+      <span class="label">Prévia do produto</span>
+      <h2 class="display">Veja como funciona<br>na prática.</h2>
+    </div>
+    <div class="browser fade" style="transition-delay:.1s">
+      <div class="br-bar">
+        <div class="br-d br-d-r"></div>
+        <div class="br-d br-d-y"></div>
+        <div class="br-d br-d-g"></div>
+        <div class="br-url">🔒&nbsp;&nbsp;prompts.arquitetosengenheiros.com.br</div>
+      </div>
+      <div class="br-body">
+
+        <!-- stats chips -->
+        <div class="ui-stats">
+          <div class="ui-stat-chip"><strong>150</strong> prompts</div>
+          <div class="ui-stat-chip"><strong>10</strong> categorias</div>
+          <div class="ui-stat-chip"><strong>7</strong> IAs suportadas</div>
+        </div>
+
+        <!-- filter by category -->
+        <div class="ui-filter-label">Filtrar por categoria</div>
+        <div class="ui-filter-row">
+          <div class="ui-pill active">Todos (150)</div>
+          <div class="ui-pill">Projetos (29)</div>
+          <div class="ui-pill">Marketing (17)</div>
+          <div class="ui-pill">Renderização (12)</div>
+          <div class="ui-pill">Contratos (16)</div>
+          <div class="ui-pill">Financeiro (15)</div>
+          <div class="ui-pill">Fornecedores (10)</div>
+          <div class="ui-pill">Organização (13)</div>
+          <div class="ui-pill">Atendimento (12)</div>
+          <div class="ui-pill">RH &amp; Equipe (12)</div>
+          <div class="ui-pill">Captação (14)</div>
+        </div>
+
+        <!-- IA filter -->
+        <div class="ui-ia-row">
+          <span class="ui-ia-label">IAS:</span>
+          <div class="ui-ia ia-gpt"><div class="ui-ia-dot" style="background:#19A37A"></div>ChatGPT</div>
+          <div class="ui-ia ia-gem"><div class="ui-ia-dot" style="background:#4285F4"></div>Gemini</div>
+          <div class="ui-ia ia-cla"><div class="ui-ia-dot" style="background:#D97706"></div>Claude</div>
+          <div class="ui-ia ia-grok">✕ Grok</div>
+          <div class="ui-ia ia-mj">∨ Midjourney</div>
+          <div class="ui-ia ia-dalle"><div class="ui-ia-dot" style="background:#19A37A"></div>DALL-E</div>
+          <div class="ui-ia ia-ideo"><div class="ui-ia-dot" style="background:#7C3AED"></div>Ideogram</div>
+          <div class="ui-ia ia-fire">★ Firefly</div>
+        </div>
+
+        <!-- prompt list -->
+        <div class="ui-prompts">
+          <div class="ui-prompt-card">
+            <div class="ui-p-left">
+              <div class="ui-p-num">#001</div>
+              <div class="ui-p-title">Briefing de projeto residencial</div>
+              <div class="ui-p-tags">
+                <span class="ui-tag tag-cat">Projetos</span>
+                <span class="ui-tag tag-gpt">ChatGPT</span>
+                <span class="ui-tag tag-gem">Gemini</span>
+                <span class="ui-tag tag-cla">Claude</span>
+                <span class="ui-tag tag-grok">Grok</span>
+              </div>
+            </div>
+            <div class="ui-p-chevron">∨</div>
+          </div>
+          <div class="ui-prompt-card">
+            <div class="ui-p-left">
+              <div class="ui-p-num">#002</div>
+              <div class="ui-p-title">Memorial descritivo automático</div>
+              <div class="ui-p-tags">
+                <span class="ui-tag tag-cat">Projetos</span>
+                <span class="ui-tag tag-gpt">ChatGPT</span>
+                <span class="ui-tag tag-gem">Gemini</span>
+                <span class="ui-tag tag-cla">Claude</span>
+                <span class="ui-tag tag-grok">Grok</span>
+              </div>
+            </div>
+            <div class="ui-p-chevron">∨</div>
+          </div>
+          <div class="ui-prompt-card">
+            <div class="ui-p-left">
+              <div class="ui-p-num">#003</div>
+              <div class="ui-p-title">Checklist de aprovação municipal</div>
+              <div class="ui-p-tags">
+                <span class="ui-tag tag-cat">Projetos</span>
+                <span class="ui-tag tag-gpt">ChatGPT</span>
+                <span class="ui-tag tag-gem">Gemini</span>
+                <span class="ui-tag tag-cla">Claude</span>
+                <span class="ui-tag tag-grok">Grok</span>
+              </div>
+            </div>
+            <div class="ui-p-chevron">∨</div>
+          </div>
+          <div class="ui-prompt-card">
+            <div class="ui-p-left">
+              <div class="ui-p-num">#004</div>
+              <div class="ui-p-title">Revisão crítica de partido arquitetônico</div>
+              <div class="ui-p-tags">
+                <span class="ui-tag tag-cat">Projetos</span>
+                <span class="ui-tag tag-gpt">ChatGPT</span>
+                <span class="ui-tag tag-gem">Gemini</span>
+                <span class="ui-tag tag-cla">Claude</span>
+                <span class="ui-tag tag-grok">Grok</span>
+              </div>
+            </div>
+            <div class="ui-p-chevron">∨</div>
+          </div>
+          <div class="ui-prompt-card">
+            <div class="ui-p-left">
+              <div class="ui-p-num">#005</div>
+              <div class="ui-p-title">Compatibilização de projetos</div>
+              <div class="ui-p-tags">
+                <span class="ui-tag tag-cat">Projetos</span>
+                <span class="ui-tag tag-gpt">ChatGPT</span>
+                <span class="ui-tag tag-gem">Gemini</span>
+                <span class="ui-tag tag-cla">Claude</span>
+                <span class="ui-tag tag-grok">Grok</span>
+              </div>
+            </div>
+            <div class="ui-p-chevron">∨</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="mockup-note fade" style="transition-delay:.2s">Acesso imediato após a compra — funciona no navegador, sem instalar nada.</p>
+  </div>
+</section>
+
+
+<!-- ══ GARANTIA ══ -->
+<section id="garantia">
+  <div class="container">
+    <div class="g-box fade">
+      <span class="g-file-tag">garantia.txt</span>
+      <h3 class="display">7 dias de garantia incondicional.</h3>
+      <p>Se em até 7 dias você sentir que os prompts não agregam valor ao seu trabalho, basta enviar um e-mail e devolvemos 100% do valor. Sem burocracia, sem perguntas. Preto no branco.</p>
+      <p class="g-comment">// nosso acordo com cada profissional que compra</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ PREÇO ══ -->
+<section id="preco">
+  <div class="container">
+    <div class="p-inner fade">
+
+      <span class="p-badge">Oferta de lançamento</span>
+
+      <div class="p-from-row">
+        <span class="p-old">De R$ 97,00</span>
+        <span class="p-savings">72% OFF</span>
+      </div>
+
+      <p class="p-main display">R$&thinsp;27</p>
+      <p class="p-note">Pagamento único · Acesso imediato · Funciona no celular e no computador</p>
+
+      <a href="https://pay.kiwify.com.br/1P6rMzP" class="btn btn-primary p-cta">QUERO OS +150 PROMPTS AGORA →</a>
+
+      <p class="p-guarantee-note">🛡️ 7 dias de garantia incondicional — não gostou, devolvemos tudo.</p>
+
+      <hr class="p-divider">
+
+      <div class="p-checklist">
+        <div class="p-check"><span class="p-check-icon">✓</span>+150 prompts prontos para uso imediato</div>
+        <div class="p-check"><span class="p-check-icon">✓</span>10 categorias organizadas por área</div>
+        <div class="p-check"><span class="p-check-icon">✓</span>ChatGPT, Claude, Gemini e mais 4 IAs</div>
+        <div class="p-check"><span class="p-check-icon">✓</span>Funciona no plano gratuito do ChatGPT</div>
+        <div class="p-check"><span class="p-check-icon">✓</span>Acesso vitalício — sem mensalidade</div>
+        <div class="p-check"><span class="p-check-icon">✓</span>Funciona no celular e no computador</div>
+      </div>
+
+      <div class="p-methods">
+        <div class="p-method">🏦 Pix</div>
+        <div class="p-method">💳 Cartão de crédito</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="container">
+    <div class="sec-head fade">
+      <span class="label">Dúvidas frequentes</span>
+      <h2 class="display">Perguntas<br>frequentes.</h2>
+    </div>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Preciso saber programar ou ter conhecimento técnico em IA?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-body">Não. Os prompts já estão prontos e testados. Você copia o texto, cola na IA que já usa e usa o resultado. Sem configuração, sem instalação, sem código.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Funciona com o ChatGPT gratuito?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-body">Sim. Os prompts de texto funcionam no plano gratuito do ChatGPT e do Gemini. Para prompts de imagem — renders e plantas humanizadas — você precisará de Midjourney, DALL-E, Ideogram ou Adobe Firefly.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Como recebo o produto após a compra?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-body">Imediatamente após a confirmação do pagamento você recebe o link de acesso por e-mail. Para boleto, o acesso é liberado após a compensação bancária (até 1 dia útil).</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Os prompts funcionam para engenheiros também ou só para arquitetos?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-body">Sim, o produto foi desenvolvido para os dois perfis. As categorias cobrem arquitetura e engenharia civil, de instalações e gestão de obra — compatibilização, checklists técnicos, ART/RRT, fornecedores e muito mais.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          Posso usar no celular?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">
+          <div class="faq-a-body">Sim. A interface funciona em qualquer navegador — Chrome, Safari, Firefox — no celular ou no computador. Nenhum aplicativo para instalar.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ CTA FINAL ══ -->
+<section id="cta-final">
+  <div class="container">
+    <div class="fade">
+      <h2 class="display">Seu escritório com IA trabalhando por você.</h2>
+      <a href="#preco" class="btn-inv">Começar agora por R$&nbsp;27 →</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ FOOTER ══ -->
+<footer id="footer">
+  <div class="container footer-inner">
+    <span class="footer-copy">© 2026 IK Ensina · +150 Prompts para Arquitetos e Engenheiros · Todos os direitos reservados</span>
+    <div class="footer-links">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // Fade-in on scroll
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade').forEach(el => obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const ans  = item.querySelector('.faq-a');
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => {
+        i.classList.remove('open');
+        i.querySelector('.faq-a').style.maxHeight = null;
+      });
+      if (!open) {
+        item.classList.add('open');
+        ans.style.maxHeight = ans.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 62, behavior: 'smooth' });
+    });
+  });
+</script>
+
+</body>
+</html>
